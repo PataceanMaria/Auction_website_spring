@@ -3,8 +3,10 @@ import {Button, ButtonGroup, Container, Table} from 'reactstrap';
 import AppNavbar from './AppNavbar';
 import {Link, withRouter} from 'react-router-dom';
 import "./cardstyle.css"
+import logo from './ImageSliderComponent/logo.svg';
 
 class ProductList extends Component {
+
     constructor(props) {
         super(props);
         this.state = {products: []};
@@ -40,7 +42,7 @@ class ProductList extends Component {
         const productList = products.map(product => {
             return <div class="items" key={product.id}>
 
-
+                <img src={logo} className="App-logo" alt="logo" />
                 <div className="name">{product.name}</div>
                 <div className="price">{product.price}</div>
                 <div className="info">{product.description}</div>
