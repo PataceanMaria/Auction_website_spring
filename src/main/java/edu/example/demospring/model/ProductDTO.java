@@ -6,6 +6,20 @@ public class ProductDTO {
     private String name;
     private String price;
     private String description;
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public ProductDTO(byte[] image) {
+        this.image = image;
+    }
+
+    private byte []image;
 public ProductDTO()
 {
 

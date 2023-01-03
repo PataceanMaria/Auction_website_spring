@@ -44,7 +44,7 @@ public class ProductServiceController {
         return new ResponseEntity<>("Product created", HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/products_page/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getProduct(@PathVariable("id") Long id) {
         return new ResponseEntity<>(productRepository.findById(id).map(p -> new ProductDTO(p.getId(), p.getName(),p.getDescription(),p.getPrice())).orElse(null), HttpStatus.OK);
     }

@@ -7,6 +7,7 @@ import AppNavbar from './AppNavbar';
 class ProductEdit extends Component {
     emptyItem = {
         name: '',
+        price:'',
         description:''
     };
 
@@ -32,6 +33,7 @@ class ProductEdit extends Component {
         const value = target.value;
         const name = target.name;
         const description = target.description;
+        const price = target.price;
         let item = {...this.state.item};
         item[name] = value;
         this.setState({item});
@@ -70,6 +72,9 @@ class ProductEdit extends Component {
                                onChange={this.handleChange} autoComplete="name"/>
                         <Label for="name">Description</Label>
                         <Input type="text" name="description" id="description" value={item.description}
+                               onChange={this.handleChange} autoComplete="description"/>
+                        <Label for="name">Price</Label>
+                        <Input type="text" name="price" id="price" value={item.price}
                                onChange={this.handleChange} autoComplete="description"/>
                     </FormGroup>
                     <FormGroup>

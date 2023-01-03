@@ -10,14 +10,27 @@ public class Product implements Serializable {
     private String name;
     private  String price;
     private String description;
+    @Lob
+    private byte[] image;
 
 
+    public Product(byte[] image) {
+        this.image = image;
+    }
 
-    public Product(long id,String name,String description,String price) {
+    public Product(long id, String name, String description, String price) {
         this.id=id;
         this.price = price;
         this.description = description;
         this.name = name;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public Product() {

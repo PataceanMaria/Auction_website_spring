@@ -5,11 +5,10 @@ import AppNavbar from './AppNavbar'
 import {Link} from 'react-router-dom';
 import {Button, Container} from "reactstrap";
 import { withRouter } from 'react-router-dom'
-import {SliderData} from "./ImageSliderComponent/SliderData";
-import ImageSlider from "./ImageSliderComponent/ImageSlider";
 import productList from "./ProductList";
 import ProductEdit from "./ProductEdit";
 import ProductList from "./ProductList";
+import Slider from "./AutoplaySlider/Slider";
 
 
 class Home extends Component  {
@@ -26,14 +25,17 @@ class Home extends Component  {
                 <div className="section1">
 
                     {
-                        <ImageSlider slides={SliderData}/>
+                        <Slider/>
                     }
                 </div>
                 <div className="section2">
-                    <div className="container">
+
+                    <div className="container"  >
                         <ProductList/>
 
+
                     </div>
+
                 </div>
             </div>
 
@@ -46,6 +48,7 @@ class Home extends Component  {
                 Connect with us at
                 <div className="social-media">
                     <a href="#">
+
                         <ion-icon name="logo-facebook"></ion-icon>
                     </a>
                     <a href="#">

@@ -1,10 +1,14 @@
-import logo from './ImageSliderComponent/logo.svg';
+
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './App.css';
 import {Component} from "react";
 import Home from './Home'
 import ProductList from "./ProductList";
 import ProductEdit from "./ProductEdit";
+import Productpage from "./productpage";
+import Register from "./Registration_forms/Registration";
+
+
 
 class App extends Component {
     state = {
@@ -15,7 +19,11 @@ class App extends Component {
         const response = await fetch('/products');
         const body = await response.json();
         this.setState({products: body});
+        const response2=await fetch('/users');
+        const body2=await response.json();
+        this.setState({users:body});
     }
+
 
     // render() {
     //     const {products} = this.state
@@ -42,7 +50,10 @@ class App extends Component {
                 <Switch>
                     <Route path='/' exact={true}><Home/></Route>
                     <Route path='/products' exact={true}><Home/></Route>
+                    <Route path='/products_page/:id'><Productpage/></Route>
+
                     <Route path='/products/:id'><ProductEdit/></Route>
+
                 </Switch>
             </Router>
         )
