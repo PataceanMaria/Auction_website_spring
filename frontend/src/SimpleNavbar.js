@@ -4,13 +4,17 @@ import "./ProductList"
 import {Navbar, NavbarBrand} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
-export default class AppNavbar extends Component {
+export default class SimpleNavbar extends Component {
     constructor(props) {
         super(props);
         this.state = {isOpen: false};
         this.toggle = this.toggle.bind(this);
     }
 
+    handleClick = () => {
+        localStorage.removeItem('jwt');
+        window.location.href="/";
+    }
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -29,12 +33,12 @@ export default class AppNavbar extends Component {
                 </div>
                 <div className="heading">
                     <ul>
-
+                        <li><a href="/products/new" className="under">SELL</a></li>
                         <li><a href="#" className="under">CATEGORIES</a></li>
                         <li><a href="#" className="under">HELP</a></li>
                         <li><a href="#" className="under">CONTACT US</a></li>
                         <li><a href="#" className="under">ABOUT US</a></li>
-                        <li><a href="/registration" className="under">SING IN</a></li>
+                        <li><a href="/" className="under">LOG OUT</a></li>
                     </ul>
                 </div>
                 <div className="heading">

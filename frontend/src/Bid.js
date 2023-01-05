@@ -4,7 +4,7 @@ import {Button, Container, Form, FormGroup, Input, Label} from 'reactstrap';
 import AppNavbar from './AppNavbar';
 
 
-class ProductEdit extends Component {
+class Bid extends Component {
     emptyItem = {
         name: '',
         price:'',
@@ -24,7 +24,7 @@ class ProductEdit extends Component {
     async componentDidMount() {
         console.log(this.props);
         if (this.props.match.params.id !== 'new') {
-            const product = await (await fetch(`/products/${this.props.match.params.id}`)).json();
+            const product = await (await fetch(`/products_update/${this.props.match.params.id}`)).json();
             this.setState({item: product});
         }
     }
@@ -32,12 +32,9 @@ class ProductEdit extends Component {
     handleChange(event) {
         const target = event.target;
         const value = target.value;
-        const name = target.name;
-        const description = target.description;
         const price = target.price;
-        const image = target.image;
         let item = {...this.state.item};
-        item[name] = value;
+        item[price] = value;
         this.setState({item});
     }
 
@@ -45,20 +42,15 @@ class ProductEdit extends Component {
         event.preventDefault();
         const {item} = this.state;
 
-        await fetch('/products' + (item.id ? '/' + item.id : ''), {
-            method: (item.id) ? 'PUT' : 'POST',
+        await fetch('/products_page' + item.id , {
+            method: 'PUT' ,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(item),
-        }).then((response)=>response.text()).then((result)=>{
-            if(result=="Product created"){
-                alert("Product added successfully!");
-            }else{
-                alert("Something went wrong!");
-            }
         });
+        this.props.history.push(`/products_page/${item.id}`);
     }
 
 
@@ -74,26 +66,14 @@ class ProductEdit extends Component {
                 {title}
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" value={item.name}
-                               onChange={this.handleChange} autoComplete="name"/>
-                        <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" value={item.name}
-                               onChange={this.handleChange} autoComplete="name"/>
-                        <Label for="name">Description</Label>
-                        <Input type="text" name="description" id="description" value={item.description}
-                               onChange={this.handleChange} autoComplete="description"/>
-                        
+
                         <Label for="name">Price</Label>
                         <Input type="text" name="price" id="price" value={item.price}
                                onChange={this.handleChange} autoComplete="description"/>
-                        <Input type="file" name="image" id="image" value={item.image}
-                               onChange={this.handleChange} />
 
                     </FormGroup>
                     <FormGroup>
                         <Button color="primary" type="submit">Save</Button>
-                        <Button color="secondary" tag={Link} to="/">Cancel</Button>
                     </FormGroup>
                 </Form>
             </Container>
@@ -102,4 +82,4 @@ class ProductEdit extends Component {
 
 }
 
-export default withRouter(ProductEdit);
+export default withRouter(Bid);

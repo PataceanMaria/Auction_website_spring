@@ -14,6 +14,7 @@ public class User implements Serializable {
     private String username;
     private String name;
     private String email;
+    private String password;
 
     public User() {
 
@@ -27,11 +28,20 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User(Long id, String username, String name, String email) {
+    public User(Long id, String username, String name, String email,String password) {
         this.id = id;
         this.username = username;
         this.name = name;
         this.email = email;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {

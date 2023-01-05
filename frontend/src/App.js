@@ -7,6 +7,11 @@ import ProductList from "./ProductList";
 import ProductEdit from "./ProductEdit";
 import Productpage from "./productpage";
 import Register from "./Registration_forms/Registration";
+import Bid from "./Bid";
+import Login from "./Registration_forms/Login";
+import LoggedHome from "./LoggedHome";
+import Registration from "./Registration_forms/Registration";
+
 
 
 
@@ -51,6 +56,10 @@ class App extends Component {
                     <Route path='/' exact={true}><Home/></Route>
                     <Route path='/products' exact={true}><Home/></Route>
                     <Route path='/products_page/:id'><Productpage/></Route>
+                    <Route path='/registration'><Registration/></Route>
+                    <Route path='/products_page/:id'><Bid/></Route>
+                    <Route path='/Login'><Login/></Route>
+                    <Route path='/logged-home'><LoggedHome/></Route>
 
                     <Route path='/products/:id'><ProductEdit/></Route>
 

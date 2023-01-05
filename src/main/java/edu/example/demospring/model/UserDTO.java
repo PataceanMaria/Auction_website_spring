@@ -2,17 +2,26 @@ package edu.example.demospring.model;
 
 public class UserDTO {
 
-    private Long id;
-    private String username;
-    private String name;
-    private String email;
+    public Long id;
+    public String username;
+    public String name;
+    public String email;
+    public String password;
 
+    public String getPassword() {
+        return password;
+    }
 
-    public UserDTO(Long id, String username, String name, String email) {
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public UserDTO(Long id, String username, String name, String email, String password) {
         this.id = id;
         this.username = username;
         this.name = name;
         this.email = email;
+        this.password = password;
     }
 
     public UserDTO()

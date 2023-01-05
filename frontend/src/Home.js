@@ -1,7 +1,6 @@
 import {Component} from "react";
 import './App.css'
 import "./ProductEdit";
-import AppNavbar from './AppNavbar'
 import {Link} from 'react-router-dom';
 import {Button, Container} from "reactstrap";
 import { withRouter } from 'react-router-dom'
@@ -9,6 +8,7 @@ import productList from "./ProductList";
 import ProductEdit from "./ProductEdit";
 import ProductList from "./ProductList";
 import Slider from "./AutoplaySlider/Slider";
+import AppNavbar from "./AppNavbar";
 
 
 class Home extends Component  {
@@ -18,7 +18,7 @@ class Home extends Component  {
     render() {
         return (<body>
 
-            <AppNavbar/>
+    <AppNavbar/>
 
         <section>
             <div className="section">

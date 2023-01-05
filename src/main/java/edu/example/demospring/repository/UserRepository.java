@@ -1,6 +1,6 @@
 package edu.example.demospring.repository;
 
-import edu.example.demospring.persitence.Product;
+import edu.example.demospring.model.UserDTO;
 import edu.example.demospring.persitence.User;
 import org.springframework.data.repository.CrudRepository;
 
@@ -11,4 +11,5 @@ public interface UserRepository extends CrudRepository<User,Long> {
     List<User> findAll();
 
     Optional<User> findById(Long id);
+    User findByUsername(String username);
 }
