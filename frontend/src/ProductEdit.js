@@ -2,6 +2,7 @@ import {Component} from "react";
 import {Link, withRouter} from 'react-router-dom';
 import {Button, Container, Form, FormGroup, Input, Label} from 'reactstrap';
 import AppNavbar from './AppNavbar';
+import SimpleNavbar from "./SimpleNavbar";
 
 
 class ProductEdit extends Component {
@@ -33,9 +34,6 @@ class ProductEdit extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-        const description = target.description;
-        const price = target.price;
-        const image = target.image;
         let item = {...this.state.item};
         item[name] = value;
         this.setState({item});
@@ -69,7 +67,7 @@ class ProductEdit extends Component {
         const title = <h2>{item.id ? 'Edit Product' : 'Add Product'}</h2>;
 
         return (<div>
-            <AppNavbar/>
+            <SimpleNavbar/>
             <Container>
                 {title}
                 <Form onSubmit={this.handleSubmit}>

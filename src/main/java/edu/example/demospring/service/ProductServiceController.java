@@ -52,8 +52,6 @@ public class ProductServiceController {
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") Long id, @RequestBody ProductDTO productDTO) {
         productRepository.findById(id).ifPresent(p -> {
-            p.setName(productDTO.getName());
-            p.setDescription(productDTO.getDescription());
             p.setPrice(productDTO.getPrice());
             productRepository.save(p);
         });

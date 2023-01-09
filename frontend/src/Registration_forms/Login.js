@@ -1,6 +1,7 @@
 import {Component} from "react";
 import {Button, Container, Form, FormGroup, Input, Label} from "reactstrap";
 import {Link} from "react-router-dom";
+import "./style.css";
 
 
 class Login extends Component

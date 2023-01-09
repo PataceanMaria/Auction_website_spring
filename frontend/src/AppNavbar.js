@@ -34,7 +34,7 @@ export default class AppNavbar extends Component {
                         <li><a href="#" className="under">HELP</a></li>
                         <li><a href="#" className="under">CONTACT US</a></li>
                         <li><a href="#" className="under">ABOUT US</a></li>
-                        <li><a href="/registration" className="under">SING IN</a></li>
+                        <li><a href="/login" className="under">SING IN</a></li>
                     </ul>
                 </div>
                 <div className="heading">

@@ -24,7 +24,7 @@ export default class SimpleNavbar extends Component {
     render() {
         return (
             <header>
-                <div className="logo"><a href="/">Alligators</a></div>
+                <div className="logo"><a href="/logged-home">Alligators</a></div>
                 <div className="menu">
                     <a href="#">
                         <ion-icon name="close" className="close"></ion-icon>

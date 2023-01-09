@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @RestController
 public class UserServiceController {
     PasswordEncoder passwordEncoder;
+
     private static Map<Long, UserDTO> userDTOMap=new HashMap<>();
     final UserRepository userRepository;
     final UserServiceDAO userServiceDAO;

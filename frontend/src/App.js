@@ -11,6 +11,8 @@ import Bid from "./Bid";
 import Login from "./Registration_forms/Login";
 import LoggedHome from "./LoggedHome";
 import Registration from "./Registration_forms/Registration";
+import SocketMessage from "./SocketMessage";
+import App_Stomp from "./App_Stomp";
 
 
 
@@ -58,9 +60,10 @@ class App extends Component {
                     <Route path='/products_page/:id'><Productpage/></Route>
                     <Route path='/registration'><Registration/></Route>
                     <Route path='/products_page/:id'><Bid/></Route>
-                    <Route path='/Login'><Login/></Route>
+                    <Route path='/login'><Login/></Route>
                     <Route path='/logged-home'><LoggedHome/></Route>
-
+                    <Route path='/app'><App_Stomp/></Route>
+                    <Route path='/message'><SocketMessage/></Route>
                     <Route path='/products/:id'><ProductEdit/></Route>
 
                 </Switch>
