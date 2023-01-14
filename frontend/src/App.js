@@ -13,6 +13,7 @@ import LoggedHome from "./LoggedHome";
 import Registration from "./Registration_forms/Registration";
 import SocketMessage from "./SocketMessage";
 import App_Stomp from "./App_Stomp";
+import Test from "./Test";
 
 
 
@@ -65,6 +66,7 @@ class App extends Component {
                     <Route path='/app'><App_Stomp/></Route>
                     <Route path='/message'><SocketMessage/></Route>
                     <Route path='/products/:id'><ProductEdit/></Route>
+                    <Route path='/send_data'><Test/></Route>
 
                 </Switch>
             </Router>

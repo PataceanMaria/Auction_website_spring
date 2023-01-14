@@ -36,9 +36,11 @@ class Productpage extends Component{
 
         let currentComponent = this;
 
+
         let onConnected = () => {
             console.log("Connected!!")
-            client.subscribe('/topic/message', function (msg) {
+            client.subscribe(`/topic/${this.props.match.params.id}`, function (msg) {
+                console.log(msg);
                 if (msg.body) {
                     let jsonBody = JSON.parse(msg.body);
                     if (jsonBody.message) {
@@ -47,7 +49,18 @@ class Productpage extends Component{
                 }
             });
         }
-
+        /*let onConnected = () => {
+            console.log("Connected!!")
+            client.subscribe(`{/topic/${this.props.match.params.id}`, function (msg) {
+                if (msg.body) {
+                    let jsonBody = JSON.parse(msg.body);
+                    if (jsonBody.message) {
+                        console.log(jsonBody.message);
+                        currentComponent.setState({ messages: jsonBody.message })
+                    }
+                }
+            });
+        }*/
         let onDisconnected = () => {
             console.log("Disconnected!!")
         }
@@ -107,11 +120,19 @@ class Productpage extends Component{
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({price:item.bid}),
+                body: JSON.stringify({id:id,price:item.bid}),
             }).then((response)=>response.text());
         }
-
+        fetch('send_product', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({price:item.bid}),
+        }).then((response)=>response.text());
         console.log(this.state.messages);
+
     }
 
 

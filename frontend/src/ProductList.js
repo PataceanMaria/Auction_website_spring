@@ -20,20 +20,6 @@ class ProductList extends Component {
     }
 
 
-    async remove(id) {
-         fetch(`/products/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(() => {
-            let updateProducts = [...this.state.products].filter(i => i.id !== id);
-            this.setState({products: updateProducts});
-
-
-        });
-    }
 
     render() {
         const {products, isLoading} = this.state;
