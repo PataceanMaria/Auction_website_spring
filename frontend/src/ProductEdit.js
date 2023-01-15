@@ -63,18 +63,12 @@ class ProductEdit extends Component {
     render() {
         const {item} = this.state;
 
-
-        const title = <h2>{item.id ? 'Edit Product' : 'Add Product'}</h2>;
-
         return (<div>
             <SimpleNavbar/>
             <Container>
-                {title}
-                <Form onSubmit={this.handleSubmit}>
+
+                <form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" value={item.name}
-                               onChange={this.handleChange} autoComplete="name"/>
                         <Label for="name">Name</Label>
                         <Input type="text" name="name" id="name" value={item.name}
                                onChange={this.handleChange} autoComplete="name"/>
@@ -91,9 +85,8 @@ class ProductEdit extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Button color="primary" type="submit">Save</Button>
-                        <Button color="secondary" tag={Link} to="/">Cancel</Button>
                     </FormGroup>
-                </Form>
+                </form>
             </Container>
         </div>)
     }

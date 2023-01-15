@@ -8,12 +8,13 @@ import ProductEdit from "./ProductEdit";
 import Productpage from "./productpage";
 import Register from "./Registration_forms/Registration";
 import Bid from "./Bid";
-import Login from "./Registration_forms/Login";
+import Login from "./Login";
 import LoggedHome from "./LoggedHome";
 import Registration from "./Registration_forms/Registration";
 import SocketMessage from "./SocketMessage";
 import App_Stomp from "./App_Stomp";
 import Test from "./Test";
+import Productpage_logged from "./Productpage_logged";
 
 
 
@@ -67,6 +68,8 @@ class App extends Component {
                     <Route path='/message'><SocketMessage/></Route>
                     <Route path='/products/:id'><ProductEdit/></Route>
                     <Route path='/send_data'><Test/></Route>
+                    <Route path='/products_page_not_logged/:id'><Productpage_logged/></Route>
+
 
                 </Switch>
             </Router>

@@ -9,6 +9,7 @@ import ProductEdit from "./ProductEdit";
 import ProductList from "./ProductList";
 import Slider from "./AutoplaySlider/Slider";
 import AppNavbar from "./AppNavbar";
+import Productlist2 from "./Productlist2";
 
 
 class Home extends Component  {
@@ -31,7 +32,7 @@ class Home extends Component  {
                 <div className="section2">
 
                     <div className="container"  >
-                        <ProductList/>
+                        <Productlist2/>
 
 
                     </div>
